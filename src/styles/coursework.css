@@ -1,0 +1,103 @@
+.coursework-section {
+  padding: 55px 0;
+}
+
+.physics-card {
+  width: calc((100% - 25px) / 2);
+  margin: 25px auto 0;
+}
+
+.main-course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background-color: var(--surface);
+}
+
+.course-card h2 {
+  margin: 0 0 22px;
+  font-size: 1.4rem;
+}
+
+.course-list {
+  display: grid;
+  gap: 14px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.course-list li {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px;
+
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.course-list li:last-child {
+  border-bottom: none;
+}
+
+.course-list strong {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.course-list span {
+  color: var(--muted-text);
+  font-size: 0.9rem;
+}
+
+.course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  margin-top: auto;
+  padding-top: 25px;
+}
+
+.course-tags span {
+  padding: 4px 8px;
+
+  color: var(--accent-dark);
+  background-color: var(--background);
+
+  border-radius: 4px;
+  font-size: 0.72rem;
+}
+
+@media (max-width: 750px) {
+  .physics-card {
+    width: 100%;
+  }
+
+  .main-course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  .course-card {
+    padding: 22px;
+  }
+
+  .course-list li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

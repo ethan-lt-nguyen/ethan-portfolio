@@ -1,38 +1,19 @@
 ---
-const name = "Ethan Nguyen";
+import BaseLayout from "../layouts/Layout.astro";
 import "../styles/global.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{name}</title>
-  </head>
+<BaseLayout
+  title="Ethan Nguyen"
+  description="Personal academic website of Ethan Nguyen, an SDSU student interested in scientific computing and computational physics.">
+  <main>
+    <h1>Hi, I’m Ethan Le Nguyen.</h1>
 
-  <body>
-    <header>
-  	<nav class="top-nav">
-    	<a class="name" href="/">Ethan Nguyen</a>
-    		<div class="nav-links">
-				<a href="/projects">Projects</a>
-				<a href="/research">Research</a>
-				<a href="/cv">CV</a>
-				<a href="/about">About</a>
-				<a href="/contact">Contact</a>
-    		</div>
-  		</nav>
-	</header>
+    <p>
+      I study computer science and mathematics, with interests in scientific
+      computing, simulation, and quantum computation.
+    </p>
 
-    <main>
-      <h1>Hi, I’m {name}.</h1>
-
-      <p>
-        I study computer science and mathematics, with interests in scientific
-        computing, simulation, and quantum computation.
-      </p>
-
-      <a href="/projects">View my projects</a>
-    </main>
-  </body>
-</html>
+    <a href="/projects">View my projects</a>
+  </main>
+</BaseLayout>

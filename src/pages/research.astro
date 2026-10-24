@@ -1,38 +1,76 @@
 ---
-const name = "Ethan Nguyen";
-import "../styles/global.css";
+import BaseLayout from "../layouts/Layout.astro";
+import "../styles/research.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{name}</title>
-  </head>
+<BaseLayout
+  title="Research | Ethan Nguyen"
+  description="Research projects and interests of Ethan Nguyen"
+>
+  <section class="page-heading">
+    <h1>Research</h1>
 
-  <body>
-    <header>
-  	<nav class="top-nav">
-    	<a class="name" href="/">Ethan Nguyen</a>
-    		<div class="nav-links">
-				<a href="/projects">Projects</a>
-				<a href="/research">Research</a>
-				<a href="/cv">CV</a>
-				<a href="/about">About</a>
-				<a href="/contact">Contact</a>
-    		</div>
-  		</nav>
-	</header>
+    <p>
+      My interests include scientific computing, computational physics,
+      numerical methods, quantum computation, and high-performance computing.
+    </p>
+  </section>
 
-    <main>
-      <h1>Hi, I’m {name}.</h1>
+  <section class="research-section">
+    <h2>Current Work</h2>
+
+    <article class="research-item">
+      <p class="research-type">Computational Physics · Julia</p>
+
+      <h3>Monte Carlo Simulation of Ferroelectric ZrO₂</h3>
 
       <p>
-        I study computer science and mathematics, with interests in scientific
-        computing, simulation, and quantum computation.
+        I am developing a lattice Monte Carlo simulation based on a six-state
+        model for ferroelectric zirconia monolayers. The project includes energy
+        calculations, periodic boundary conditions, Metropolis sampling, and
+        state-distribution analysis.
       </p>
+    </article>
 
-      <a href="/projects">View my projects</a>
-    </main>
-  </body>
-</html>
+    <article class="research-item">
+      <p class="research-type">Computational Mathematics · Planned Research</p>
+
+      <h3>Rubik’s Cube Algorithm Optimization</h3>
+
+      <p>
+        I am exploring how computational search, group theory, and numerical
+        techniques can be used to analyze and optimize Rubik’s Cube algorithms.
+      </p>
+    </article>
+  </section>
+
+  <section class="research-section">
+    <h2>Research Interests</h2>
+
+    <div class="interest-grid">
+      <div>
+        <h3>Scientific and High-Performance Computing</h3>
+        <p>Numerical algorithms and software for complex scientific systems.</p>
+        <p>Efficient scientific software for parallel computing systems.</p>
+      </div>
+
+      <div>
+        <h3>Computational Physics</h3>
+        <p>Simulations that connect physical models with computational methods.</p>
+        <p>Hoping to work on quantum or astrophysics simulations with computational methods, showing things we can't experimentally show.</p>
+      </div>
+
+      <div>
+        <h3>Quantum Computation</h3>
+        <p>Quantum algorithms, simulation, and computational advantage.</p>
+        <p>Simulate quantum aspects of the computer, whether that be the hardware or simulations on the computers.</p>
+      </div>
+
+      <div>
+        <h3>Post-quantum cryptography</h3>
+        <p>Mathematical number theory and cryptography to fight against quantum computers in the future.</p>
+        <p>Protection based on the theoretical idea that quantum computers exist and can crack current RSA encryption.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

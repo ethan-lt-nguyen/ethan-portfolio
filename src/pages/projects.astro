@@ -1,38 +1,100 @@
 ---
-const name = "Ethan Nguyen";
-import "../styles/global.css";
+import BaseLayout from "../layouts/Layout.astro";
+import "../styles/projects.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{name}</title>
-  </head>
+<BaseLayout title="Projects | Ethan Nguyen">
+  <section class="page-heading">
+    <h1>Projects</h1>
 
-  <body>
-    <header>
-  	<nav class="top-nav">
-    	<a class="name" href="/">Ethan Nguyen</a>
-    		<div class="nav-links">
-				<a href="/projects">Projects</a>
-				<a href="/research">Research</a>
-				<a href="/cv">CV</a>
-				<a href="/about">About</a>
-				<a href="/contact">Contact</a>
-    		</div>
-  		</nav>
-	</header>
+    <p>
+      A selection of my scientific-computing, software-development,
+      machine-learning, and course projects.
+    </p>
+  </section>
 
-    <main>
-      <h1>Hi, I’m {name}.</h1>
+  <section class="projects-section">
+  <h2>Featured Projects</h2>
+
+  <div class="featured-project-grid">
+    <article class="project-card">
+      <p class="project-type">Computational Physics</p>
+
+      <h3>Monte Carlo Simulation</h3>
 
       <p>
-        I study computer science and mathematics, with interests in scientific
-        computing, simulation, and quantum computation.
+        A six-state lattice Monte Carlo simulation designed to model
+        ferroelectric ZrO₂ monolayers. I implemented periodic boundary
+        conditions, energy calculations, Metropolis sampling, and state
+        distribution analysis.
       </p>
 
-      <a href="/projects">View my projects</a>
-    </main>
-  </body>
-</html>
+      <div class="project-tags">
+        <span>Julia</span>
+        <span>Monte Carlo</span>
+        <span>Scientific Computing</span>
+      </div>
+
+      <a class="project-link" href="YOUR-GITHUB-LINK">
+        View project →
+      </a>
+    </article>
+
+    <article class="project-card">
+      <p class="project-type">Open-Source Scientific Software</p>
+
+      <h3>WaterLily.jl Contribution</h3>
+
+      <p>
+        Contributed testing and visualization improvements to WaterLily.jl, an
+        open-source computational fluid dynamics package written in Julia. I am
+        also developing a rotating-cylinder simulation example.
+      </p>
+
+      <div class="project-tags">
+        <span>Julia</span>
+        <span>Fluid Dynamics</span>
+        <span>Open Source</span>
+      </div>
+
+      <a class="project-link" href="YOUR-PULL-REQUEST-LINK">
+        View contribution →
+      </a>
+    </article>
+
+    <article class="project-card">
+      <p class="project-type">Computer Vision</p>
+
+      <h3>Recyclable Image Classifier</h3>
+
+      <p>
+        A machine-learning project that classifies images of objects based on
+        whether they are recyclable.
+      </p>
+
+      <div class="project-tags">
+        <span>Python</span>
+        <span>Machine Learning</span>
+        <span>Computer Vision</span>
+      </div>
+    </article>
+
+    <article class="project-card">
+      <p class="project-type">Software Development</p>
+
+      <h3>Lost and Found Application</h3>
+
+      <p>
+        Led a team project to develop an application that allows users to
+        report, search for, and recover lost belongings.
+      </p>
+
+      <div class="project-tags">
+        <span>Java</span>
+        <span>Team Project</span>
+        <span>Project Lead</span>
+      </div>
+    </article>
+  </div>
+</section>
+</BaseLayout>

@@ -1,38 +1,222 @@
 ---
-const name = "Ethan Nguyen";
-import "../styles/global.css";
+import BaseLayout from "../layouts/Layout.astro";
+import "../styles/home.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{name}</title>
-  </head>
+<BaseLayout
+  title="Ethan Nguyen"
+  description="Personal academic website of Ethan Nguyen, an SDSU student interested in scientific computing and computational physics."
+>
+  <section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-label">Hello, my name is</p>
 
-  <body>
-	<header>
-  	<nav class="top-nav">
-    	<a class="name" href="/">Ethan Nguyen</a>
-    		<div class="nav-links">
-				<a href="/projects">Projects</a>
-				<a href="/research">Research</a>
-				<a href="/cv">CV</a>
-				<a href="/about">About</a>
-				<a href="/contact">Contact</a>
-    		</div>
-  		</nav>
-	</header>
+      <h1>Ethan Le Nguyen.</h1>
 
-    <main>
-      <h1>Hi, I’m {name}.</h1>
+      <h2>
+        I study mathematics, computer science, and physics.
+      </h2>
 
-      <p>
-        I study computer science and mathematics, with interests in scientific
-        computing, simulation, and quantum computation.
+      <p class="hero-description">
+        I am a student at San Diego State University interested in mathematics, pure and computational. 
+        I am currently curious about scientific computing, computational physics, numerical methods, quantum cryptography, 
+        Rubik's cube theory, quantum computation, and high-performance computing.
       </p>
 
-      <a href="/projects">View my projects</a>
-    </main>
-  </body>
-</html>
+      <div class="hero-links">
+        <a class="primary-button" href="/research/">
+          View my research
+        </a>
+
+        <a class="secondary-button" href="/projects/">
+          View my projects
+        </a>
+      </div>
+    </div>
+
+    <img
+      class="profile-photo"
+      src="/images/profile.jpg"
+      alt="Ethan Nguyen"
+    />
+  </div>
+</section>
+
+  <section class="home-section about-section">
+    <div class="section-heading">
+      <p>About me</p>
+      <h2>Using computational power to explore scientific problems</h2>
+    </div>
+
+    <div class="about-text">
+      <p>
+        I am pursuing an interdisciplinary education in computer science,
+        mathematics, and physics. My interests lie where mathematical theory,
+        physical models, and software development meet.
+      </p>
+
+      <p>
+        My long-term goal is to develop reliable computational tools that help
+        scientists and engineers study systems that are difficult, expensive,
+        or impossible to investigate experimentally.
+      </p>
+
+      <a class="text-link" href="/about/">
+        More about me →
+      </a>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="section-title">
+      <div>
+        <p class="section-label">Current work</p>
+        <h2>What I’m working on</h2>
+      </div>
+
+      <a class="text-link" href="/research/">
+        All research →
+      </a>
+    </div>
+
+    <div class="work-list">
+      <article class="work-item">
+        <p class="work-number">01</p>
+
+        <div>
+          <p class="work-type">Computational Physics · Julia</p>
+          <h3>Monte Carlo Simulation of Ferroelectric ZrO₂</h3>
+
+          <p>
+            Developing and testing a six-state lattice simulation using energy
+            calculations, periodic boundaries, and Metropolis sampling.
+          </p>
+        </div>
+      </article>
+
+      <article class="work-item">
+        <p class="work-number">02</p>
+
+        <div>
+          <p class="work-type">Mathematics · Research Direction</p>
+          <h3>Rubik’s Cube Algorithm Optimization</h3>
+
+          <p>
+            Exploring how computational search, linear algebra, and group theory
+            can be used to analyze and optimize cube algorithms.
+          </p>
+        </div>
+      </article>
+
+      <article class="work-item">
+        <p class="work-number">03</p>
+
+        <div>
+          <p class="work-type">Open Source · Julia</p>
+          <h3>WaterLily.jl</h3>
+
+          <p>
+            Contributing testing and visualization work to an open-source
+            computational fluid dynamics package.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="section-title">
+      <div>
+        <p class="section-label">Selected projects</p>
+        <h2>Software I’ve built</h2>
+      </div>
+
+      <a class="text-link" href="/projects/">
+        All projects →
+      </a>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <p class="project-type">Computer Vision</p>
+        <h3>Recyclable Image Classifier</h3>
+
+        <p>
+          An image-classification project for identifying recyclable objects
+          using machine-learning and computer-vision techniques.
+        </p>
+
+        <div class="project-tags">
+          <span>Python</span>
+          <span>Machine Learning</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <p class="project-type">Application Development</p>
+        <h3>Lost and Found Application</h3>
+
+        <p>
+          A team software project designed to help users report, search for, and
+          recover lost belongings at San Diego State University.
+        </p>
+
+        <div class="project-tags">
+          <span>JavaScript</span>
+          <span>Web Development</span>
+          <span>Database Storage</span>
+          <span>Team Lead</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <p class="project-type">Software and Hosting</p>
+        <h3>Trig Discord Bot</h3>
+
+        <p>
+          A continuously hosted Discord bot built to provide help to people struggling with the unit circle. 
+          Includes Sine, Cosine, and Tangent functions and all the radian angles in the unit circle.
+          Hosted and automates server resets.
+        </p>
+
+        <div class="project-tags">
+          <span>JDA</span>
+          <span>AWS</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="home-section focus-section">
+    <div>
+      <p class="section-label">Academic focus</p>
+      <h2>Topics I’m currently studying</h2>
+    </div>
+
+    <div class="focus-list">
+      <span>Numerical Analysis</span>
+      <span>Computer Vision</span>
+      <span>Machine Learning</span>
+      <span>Abstract Algebra</span>
+      <span>Classical Mechanics</span>
+      <span>Computational Methods</span>
+    </div>
+  </section>
+
+  <section class="contact-banner">
+    <div>
+      <p class="section-label">Contact</p>
+      <h2>Interested in working together?</h2>
+
+      <p>
+        I’m interested in research, internships, open-source work, and
+        computational-science projects.
+      </p>
+    </div>
+
+    <a class="primary-button" href="mailto:nguyen.lt.ethan@gmail.com">
+      Email me
+    </a>
+  </section>
+</BaseLayout>
