@@ -78,7 +78,7 @@ public/
 
 ## Development Note
 
-I created this website to present my academic interests and projects while learning more about Astro and frontend development. ChatGPT was used as a development assistant for CSS styling, layout suggestions, debugging, and some wording. The content, project selection, and final design decisions are my own.
+I created this website to present my academic interests and projects while learning more about Astro and frontend development. ChatGPT was used as a development assistant for CSS styling, layout suggestions, debugging. The content, project selection, and final design decisions are my own.
 
 ## Author
 
