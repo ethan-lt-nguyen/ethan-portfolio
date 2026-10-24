@@ -1,100 +1,188 @@
 ---
 import BaseLayout from "../layouts/Layout.astro";
 import "../styles/projects.css";
+
+const featuredProjects = [
+  {
+    type: "Computational Physics",
+    title: "Monte Carlo Simulation",
+    description:
+      "A six-state lattice Monte Carlo simulation for modeling ferroelectric ZrO₂ monolayers. I implemented energy calculations, periodic boundary conditions, Metropolis sampling, and state-distribution analysis.",
+    tags: ["Julia", "Monte Carlo", "Computational Physics"],
+    status: "Research in progress",
+  },
+  {
+    type: "Game Systems Development",
+    title: "Life Series Minecraft Plugin",
+    description:
+      "A multiplayer Minecraft plugin inspired by the Life Series. It manages persistent player lives, colored scoreboards, player deaths, life transfers, session states, kill tracking, custom commands, and a Boogeyman system.",
+    tags: ["Java", "Paper API", "Event-Driven Programming"],
+    link: "https://github.com/ethan-lt-nguyen/LifeSeries",
+    linkText: "View repository",
+  },
+  {
+    type: "Open-Source Scientific Software",
+    title: "WaterLily.jl Contributions",
+    description:
+      "Testing, visualization, and example development for WaterLily.jl, an open-source computational fluid dynamics package. My current work includes developing a rotating-cylinder flow simulation.",
+    tags: ["Julia", "Fluid Dynamics", "Open Source"],
+    link: "https://github.com/ethan-lt-nguyen/WaterLily-Examples",
+    linkText: "View repository",
+  },
+  {
+    type: "Client–Server Application",
+    title: "Sudoku Game",
+    description:
+      "A JavaFX Sudoku application featuring separate client and server components, networking, saved game data, and a graphical user interface.",
+    tags: ["Java", "JavaFX", "Networking"],
+    link: "https://github.com/ethan-lt-nguyen/ArchitectSudokuLab",
+    linkText: "View repository",
+  },
+];
+
+const additionalProjects = [
+  {
+    type: "Computer Vision",
+    title: "Recyclable Waste Detector",
+    description:
+      "A computer-vision program that identifies recyclable and non-recyclable objects, draws labeled bounding boxes, counts detections, and saves annotated results.",
+    tags: ["Python", "OpenCV", "Computer Vision"],
+    link: "https://github.com/ethan-lt-nguyen/CS559-HA1",
+  },
+  {
+    type: "Automation",
+    title: "Discord Bot",
+    description:
+      "A hosted Discord bot designed to provide custom commands and automated server functionality.",
+    tags: ["Python", "Discord API", "AWS"],
+    link: "https://github.com/ethan-lt-nguyen/TrigBot",
+  },
+  {
+    type: "Software Design",
+    title: "Campus Lost and Found System",
+    description:
+      "A team project for designing a campus-wide system where users can report lost items, search found-item reports, and communicate with other users.",
+    tags: ["Team Project", "System Design", "Project Leadership"],
+    link:
+      "https://github.com/ethan-lt-nguyen/CS250-Campus-Wide-Lost-and-Found-System",
+  },
+  {
+    type: "Full-Stack Development",
+    title: "Nutrintake",
+    description:
+      "A collaborative nutrient-tracking application that supports user authentication, food creation, meal logging, nutrient-total calculations, goals, and persistent data storage.",
+    tags: ["Java", "Spring Boot", "Thymeleaf", "SQLite"],
+    link: "https://github.com/ethan-lt-nguyen/nutrintake",
+    linkText: "View repository",
+  },
+  {
+    type: "Software Design",
+    title: "Architect Bank Account",
+    description:
+      "A JavaFX banking application connected to a PostgreSQL database through Spring Data JPA. The project demonstrates desktop-interface design, persistent data storage, and database integration.",
+    tags: ["Java", "JavaFX", "Spring Data JPA", "PostgreSQL"],
+    link: "https://github.com/ethan-lt-nguyen/ArchitectBankAccount",
+    linkText: "View repository",
+  },
+
+  {
+    type: "Educational Game",
+    title: "Wells Reserve Fishing Game",
+    description:
+      "A JavaFX educational game where players catch and sell fish, answer questions about the Wells Reserve and what different animals may live there, and receive rewards for correct answers.",
+    tags: ["Java", "JavaFX", "Game Development"],
+  },
+];
 ---
 
-<BaseLayout title="Projects | Ethan Nguyen">
+<BaseLayout
+  title="Projects | Ethan Nguyen"
+  description="Scientific-computing and software-development projects by Ethan Nguyen."
+>
   <section class="page-heading">
     <h1>Projects</h1>
 
     <p>
-      A selection of my scientific-computing, software-development,
-      machine-learning, and course projects.
+      A selection of my current scientific-computing, software-development,
+      machine-learning, open-source, and course projects.
     </p>
   </section>
 
   <section class="projects-section">
-  <h2>Featured Projects</h2>
+    <div class="section-heading">
+      <p>Selected work</p>
+      <h2>Featured Projects</h2>
+    </div>
 
-  <div class="featured-project-grid">
-    <article class="project-card">
-      <p class="project-type">Computational Physics</p>
+    <div class="featured-project-grid">
+      {
+        featuredProjects.map((project) => (
+          <article class="project-card featured-card">
+            <p class="project-type">{project.type}</p>
 
-      <h3>Monte Carlo Simulation</h3>
+            <h3>{project.title}</h3>
 
-      <p>
-        A six-state lattice Monte Carlo simulation designed to model
-        ferroelectric ZrO₂ monolayers. I implemented periodic boundary
-        conditions, energy calculations, Metropolis sampling, and state
-        distribution analysis.
-      </p>
+            <p class="project-description">{project.description}</p>
 
-      <div class="project-tags">
-        <span>Julia</span>
-        <span>Monte Carlo</span>
-        <span>Scientific Computing</span>
-      </div>
+            <div class="project-tags">
+              {project.tags.map((tag) => <span>{tag}</span>)}
+            </div>
 
-      <a class="project-link" href="YOUR-GITHUB-LINK">
-        View project →
-      </a>
-    </article>
+            {
+              project.link ? (
+                <a
+                  class="project-link"
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {project.linkText} →
+                </a>
+              ) : (
+                <p class="project-status">{project.status}</p>
+              )
+            }
+          </article>
+        ))
+      }
+    </div>
+  </section>
 
-    <article class="project-card">
-      <p class="project-type">Open-Source Scientific Software</p>
+  <section class="projects-section additional-section">
+    <div class="section-heading">
+      <p>Additional work</p>
+      <h2>Other Projects</h2>
+    </div>
 
-      <h3>WaterLily.jl Contribution</h3>
+    <div class="additional-project-grid">
+      {
+        additionalProjects.map((project) => (
+          <article class="project-card additional-card">
+            <p class="project-type">{project.type}</p>
 
-      <p>
-        Contributed testing and visualization improvements to WaterLily.jl, an
-        open-source computational fluid dynamics package written in Julia. I am
-        also developing a rotating-cylinder simulation example.
-      </p>
+            <h3>{project.title}</h3>
 
-      <div class="project-tags">
-        <span>Julia</span>
-        <span>Fluid Dynamics</span>
-        <span>Open Source</span>
-      </div>
+            <p class="project-description">{project.description}</p>
 
-      <a class="project-link" href="YOUR-PULL-REQUEST-LINK">
-        View contribution →
-      </a>
-    </article>
+            <div class="project-tags">
+              {project.tags.map((tag) => <span>{tag}</span>)}
+            </div>
 
-    <article class="project-card">
-      <p class="project-type">Computer Vision</p>
-
-      <h3>Recyclable Image Classifier</h3>
-
-      <p>
-        A machine-learning project that classifies images of objects based on
-        whether they are recyclable.
-      </p>
-
-      <div class="project-tags">
-        <span>Python</span>
-        <span>Machine Learning</span>
-        <span>Computer Vision</span>
-      </div>
-    </article>
-
-    <article class="project-card">
-      <p class="project-type">Software Development</p>
-
-      <h3>Lost and Found Application</h3>
-
-      <p>
-        Led a team project to develop an application that allows users to
-        report, search for, and recover lost belongings.
-      </p>
-
-      <div class="project-tags">
-        <span>Java</span>
-        <span>Team Project</span>
-        <span>Project Lead</span>
-      </div>
-    </article>
-  </div>
-</section>
+            {
+              project.link && (
+                <a
+                  class="project-link"
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View repository →
+                </a>
+              )
+            }
+          </article>
+        ))
+      }
+    </div>
+  </section>
 </BaseLayout>

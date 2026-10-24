@@ -1,19 +1,128 @@
 ---
 import BaseLayout from "../layouts/Layout.astro";
-import "../styles/global.css";
+import "../styles/about.css";
 ---
 
 <BaseLayout
-  title="Ethan Nguyen"
-  description="Personal academic website of Ethan Nguyen, an SDSU student interested in scientific computing and computational physics.">
-  <main>
-    <h1>Hi, I’m Ethan Le Nguyen.</h1>
+  title="About | Ethan Nguyen"
+  description="Learn more about Ethan Nguyen, his academic interests, current work, and future goals."
+>
+  <section class="about-hero">
+    <div class="about-introduction">
+      <p class="section-label">About me</p>
 
-    <p>
-      I study computer science and mathematics, with interests in scientific
-      computing, simulation, and quantum computation.
-    </p>
+      <h1>Hi, I’m Ethan Le Nguyen.</h1>
 
-    <a href="/projects">View my projects</a>
-  </main>
+      <p class="about-lead">
+        I’m a computer science and mathematics student at San Diego State
+        University, where I’m also studying physics.
+      </p>
+
+      <p>
+        I’m interested in the intersection of mathematical theory, physical
+        models, and computing. In particular, I enjoy scientific computing,
+        simulation, numerical methods, and learning how computational tools can
+        help us understand complex systems.
+      </p>
+
+      <p>
+        Much of my current work involves computational physics and different languages like Julia, Python, Java. I’m
+        developing a Monte Carlo lattice simulation, contributing to
+        WaterLily.jl examples, and exploring the mathematics behind Rubik’s Cube
+        algorithms.
+      </p>
+
+      <div class="about-links">
+        <a href="/projects/">View my projects</a>
+
+        <a href="https://github.com/ethan-lt-nguyen">
+          GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/ethan-lt-nguyen/">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <img
+      class="about-photo"
+      src="/images/profile.jpg"
+      alt="Ethan Nguyen"
+    />
+  </section>
+
+  <section class="about-section">
+    <div class="section-heading">
+      <p class="section-label">Right now</p>
+      <h2>What I’m currently doing</h2>
+    </div>
+
+    <div class="current-grid">
+      <article class="current-item">
+        <p class="item-number">01</p>
+        <h3>Studying</h3>
+        <p>
+          Computer science and mathematics at SDSU, along with a minor in Physics. Thinking of changing to a Physics BA and switching to 
+          the new BS in Discrete Mathematics and Computer Science with a minor in Classical Humanities.  
+        </p>
+      </article>
+
+      <article class="current-item">
+        <p class="item-number">02</p>
+        <h3>Researching</h3>
+
+        <p>
+          Monte Carlo methods, computational physics, numerical analysis, and
+          mathematical approaches to scientific problems.
+        </p>
+      </article>
+
+      <article class="current-item">
+        <p class="item-number">03</p>
+        <h3>Building</h3>
+        <p>
+          Scientific simulations, open-source Julia examples, software
+          projects, and this website. Hoping to work on Rubik's Cube group theory and computational work in the future.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="about-section personal-section">
+    <div class="personal-column">
+      <p class="section-label">Outside academics</p>
+      <h2>More than coursework</h2>
+
+      <p>
+        Outside school and research, I enjoy speedcubing, sometimes learning about cars (Mainly the normal known ones),
+        playing games with friends, and building small projects based on
+        whatever I happen to be curious about.
+      </p>
+
+      <div class="interest-list">
+        <span>Speedcubing</span>
+        <span>Future Technology</span>
+        <span>Gaming</span>
+        <span>Teaching</span>
+        <span>Technology</span>
+      </div>
+    </div>
+
+    <div class="personal-column">
+      <p class="section-label">Looking forward</p>
+      <h2>Where I’m headed</h2>
+
+      <p>
+        In the future, I hope to pursue graduate study and work in applied
+        computational research. I’m especially interested in using
+        mathematics, physics, and computing to model complex systems and
+        develop tools that help solve scientific and human problems.
+      </p>
+
+      <a class="text-link" href="/research/">
+        See my research interests →
+      </a>
+    </div>
+  </section>
 </BaseLayout>
