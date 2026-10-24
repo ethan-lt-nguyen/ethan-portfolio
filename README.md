@@ -1,46 +1,89 @@
-# Astro Starter Kit: Basics
+# Ethan Nguyen — Personal Portfolio
 
-```sh
-npm create astro@latest -- --template basics
+This repository contains the source code for my personal academic portfolio website.
+
+The website highlights my background in computer science, mathematics, and physics, along with my research interests, coursework, and software projects.
+
+## Website
+
+The portfolio is currently being prepared for deployment through Netlify.
+
+**Live website:** Coming soon
+
+## Pages
+
+- **Home** — Introduction, current work, selected projects, and academic interests
+- **Research** — Current research projects and areas I would like to explore
+- **Projects** — Scientific-computing, software-development, and machine-learning projects
+- **Coursework** — Relevant physics, mathematics, and computer science courses
+- **About** — More about my academic background, interests, hobbies, and future goals
+
+## Built With
+
+- [Astro](https://astro.build/)
+- HTML
+- CSS
+- JavaScript
+- React support for future interactive components
+
+## Running Locally
+
+First, clone the repository:
+
+```bash
+git clone https://github.com/ethan-lt-nguyen/ethan-portfolio.git
+cd ethan-portfolio
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Install the dependencies:
 
-## 🚀 Project Structure
+```bash
+npm install
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+Start the local development server:
+
+```bash
+npm run dev
+```
+
+Astro will display the local address in the terminal, usually:
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+http://localhost:4321
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Project Structure
 
-## 🧞 Commands
+```text
+src/
+├── components/    Reusable components such as the navigation header
+├── layouts/       Shared page layouts
+├── pages/         Website pages
+└── styles/        Global and page-specific CSS
 
-All commands are run from the root of the project, from a terminal:
+public/
+└── images/        Static images used throughout the website
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Future Plans
 
-## 👀 Want to learn more?
+- Deploy the website through Netlify
+- Connect the custom `ethanltnguyen.dev` domain
+- Add a downloadable CV
+- Expand the research and project descriptions
+- Add project images and demonstrations
+- Add an academic tutoring section
+- Improve accessibility and mobile responsiveness
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Development Note
+
+I created this website to present my academic interests and projects while learning more about Astro and frontend development. ChatGPT was used as a development assistant for CSS styling, layout suggestions, debugging, and some wording. The content, project selection, and final design decisions are my own.
+
+## Author
+
+**Ethan Nguyen**
+
+- [GitHub](https://github.com/ethan-lt-nguyen)
+- [LinkedIn](https://www.linkedin.com/in/ethan-lt-nguyen/)
+- [Email](mailto:nguyen.lt.ethan@gmail.com)
