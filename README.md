@@ -6,9 +6,9 @@ The website highlights my background in computer science, mathematics, and physi
 
 ## Website
 
-The portfolio is currently being prepared for deployment through Netlify.
+The portfolio is now done, currently on a live website!
 
-**Live website:** Coming soon
+**Live website:** www.ethanltnguyen.dev
 
 ## Pages
 
