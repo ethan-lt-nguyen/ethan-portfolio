@@ -24,7 +24,14 @@ const currentPage = Astro.url.pathname;
       >
         Projects
       </a>
-
+      
+      <a
+        class:list={{ active: currentPage.startsWith("/tutoring") }}
+        href="/tutoring/"
+      >
+        Tutoring
+      </a>
+      
       <a
         class:list={{ active: currentPage.startsWith("/coursework") }}
         href="/coursework/"

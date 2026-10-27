@@ -1,0 +1,445 @@
+/* ------------------------------ */
+/* Tutoring page                  */
+/* ------------------------------ */
+
+.tutoring-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.7fr);
+  align-items: center;
+  gap: 80px;
+  padding: 90px 0;
+}
+
+.tutoring-hero-text {
+  max-width: 720px;
+}
+
+.tutoring-hero h1 {
+  max-width: 700px;
+  margin: 12px 0 22px;
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  line-height: 1.02;
+}
+
+.tutoring-introduction {
+  max-width: 650px;
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+.tutoring-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.availability-card {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  border-radius: 10px;
+  background-color: var(--surface);
+  box-shadow: 0 12px 35px rgba(20, 50, 40, 0.08);
+}
+
+.availability-label {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 6px 10px;
+  color: var(--accent-dark);
+  border-radius: 20px;
+  background-color: var(--background);
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 0.03rem;
+}
+
+.availability-card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.availability-card ul {
+  margin: 22px 0;
+  padding-left: 20px;
+  color: var(--muted-text);
+}
+
+.availability-card li {
+  margin-bottom: 10px;
+}
+
+.availability-note {
+  margin: 0;
+  padding-top: 18px;
+  color: var(--muted-text);
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.tutoring-section {
+  padding: 75px 0;
+  border-top: 1px solid var(--border);
+}
+
+.tutoring-section .section-heading {
+  margin-bottom: 38px;
+}
+
+.tutoring-section .section-heading h2 {
+  margin: 8px 0 0;
+  font-size: 2.3rem;
+}
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.subject-card {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background-color: var(--surface);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.subject-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.subject-number {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.subject-card h3 {
+  margin: 10px 0 20px;
+  font-size: 1.4rem;
+}
+
+.subject-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted-text);
+  line-height: 1.7;
+}
+
+.subject-card li + li {
+  margin-top: 6px;
+}
+
+.process-list {
+  border-top: 1px solid var(--border);
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 25px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.process-step > span {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.process-step h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.process-step p {
+  max-width: 700px;
+  margin: 0;
+  color: var(--muted-text);
+  line-height: 1.7;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--surface);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(20, 50, 40, 0.07);
+}
+
+.featured-pricing-card {
+  border: 2px solid var(--accent);
+}
+
+.pricing-type {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+}
+
+.pricing-card h3 {
+  margin: 10px 0 4px;
+  font-size: 1.5rem;
+}
+
+.price {
+  margin: 18px 0;
+  font-size: 2.1rem;
+  font-weight: bold;
+}
+
+.price span {
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.pricing-card > p:not(.pricing-type, .price) {
+  margin: 0 0 24px;
+  color: var(--muted-text);
+  line-height: 1.7;
+}
+
+.session-details,
+.session-options {
+  margin: 0 0 28px;
+  padding: 0;
+  color: var(--muted-text);
+  list-style: none;
+}
+
+.session-details {
+  border-top: 1px solid var(--border);
+}
+
+.session-details li {
+  position: relative;
+  padding: 11px 0 11px 23px;
+  border-bottom: 1px solid var(--border);
+}
+
+.session-details li::before {
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  content: "✓";
+  font-weight: bold;
+}
+
+.session-options {
+  border-top: 1px solid var(--border);
+}
+
+.session-options li {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.session-options strong {
+  color: var(--accent-dark);
+}
+
+.pricing-card .primary-button,
+.pricing-card .secondary-button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.urgent-session {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  margin-top: 25px;
+  padding: 27px 30px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  background-color: var(--surface);
+}
+
+.urgent-session h3 {
+  margin: 7px 0;
+  font-size: 1.3rem;
+}
+
+.urgent-session p:not(.pricing-type) {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted-text);
+  line-height: 1.65;
+}
+
+.urgent-session .secondary-button {
+  flex-shrink: 0;
+}
+
+.pricing-note {
+  max-width: 850px;
+  margin: 20px 0 0;
+  color: var(--muted-text);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.tutoring-about {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+}
+
+.tutoring-about h2 {
+  margin: 8px 0 0;
+  font-size: 2.3rem;
+}
+
+.tutoring-about-text {
+  max-width: 700px;
+  color: var(--muted-text);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.tutoring-about-text p:first-child {
+  margin-top: 0;
+}
+
+.booking-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  margin: 70px 0;
+  padding: 45px;
+  color: white;
+  border-radius: 10px;
+  background-color: var(--accent-dark);
+}
+
+.booking-banner h2 {
+  margin: 7px 0;
+  font-size: 2rem;
+}
+
+.booking-banner p:not(.section-label) {
+  margin: 0;
+  color: #d7e3df;
+}
+
+.booking-banner .section-label {
+  color: #b9d6cd;
+}
+
+.booking-button {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 12px 20px;
+  color: var(--accent-dark);
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.booking-button:hover {
+  color: white;
+  background-color: transparent;
+}
+
+@media (max-width: 1000px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 800px) {
+  .tutoring-hero {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 70px 0;
+  }
+
+  .subject-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tutoring-about {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .urgent-session {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .booking-banner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .tutoring-hero h1 {
+    font-size: 3rem;
+  }
+
+  .tutoring-buttons {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .availability-card,
+  .subject-card,
+  .pricing-card {
+    padding: 24px;
+  }
+
+  .process-step {
+    grid-template-columns: 38px 1fr;
+    gap: 15px;
+  }
+
+  .urgent-session {
+    padding: 24px;
+  }
+
+  .booking-banner {
+    padding: 30px 25px;
+  }
+}
