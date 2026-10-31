@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light;
+
   --background: #f8faf9;
   --surface: #ffffff;
   --text: #202624;
@@ -6,6 +8,20 @@
   --accent: #416f63;
   --accent-dark: #2c5148;
   --border: #dce4e1;
+  --header-background: rgba(248, 250, 249, 0.95);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #0f1714;
+  --surface: #17221e;
+  --text: #edf4f1;
+  --muted-text: #a8b7b1;
+  --accent: #76b89f;
+  --accent-dark: #5fa38b;
+  --border: #304039;
+  --header-background: rgba(15, 23, 20, 0.95);
 }
 
 * {
@@ -14,6 +30,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--background);
 }
 
 body {
@@ -22,24 +39,38 @@ body {
   background-color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 a {
   color: inherit;
 }
 
-header {
+/* Header and navigation */
+
+.site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
+
+  width: 100%;
   border-bottom: 1px solid var(--border);
-  background-color: rgba(248, 250, 249, 0.95);
+  background-color: var(--header-background);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
 
   width: min(1100px, calc(100% - 40px));
   min-height: 72px;
@@ -47,6 +78,7 @@ header {
 }
 
 .name {
+  flex-shrink: 0;
   color: var(--text);
   font-size: 1.25rem;
   font-weight: bold;
@@ -55,6 +87,8 @@ header {
 
 .nav-links {
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
   gap: 28px;
 }
 
@@ -63,6 +97,9 @@ header {
   color: var(--muted-text);
   border-bottom: 2px solid transparent;
   text-decoration: none;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .nav-links a:hover,
@@ -70,6 +107,84 @@ header {
   color: var(--accent-dark);
   border-bottom-color: var(--accent);
 }
+
+/* Theme button */
+
+.theme-toggle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-self: center;
+  flex: 0 0 38px;
+
+  width: 38px;
+  height: 38px;
+  margin: 0;
+  padding: 0;
+
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background-color: var(--surface);
+
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.theme-icon {
+  position: absolute;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* In light mode, show the moon. */
+
+.theme-icon-sun {
+  opacity: 0;
+  transform: rotate(-45deg) scale(0.7);
+}
+
+.theme-icon-moon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* In dark mode, show the sun. */
+
+:root[data-theme="dark"] .theme-icon-sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+:root[data-theme="dark"] .theme-icon-moon {
+  opacity: 0;
+  transform: rotate(45deg) scale(0.7);
+}
+
+/* General page styles */
 
 main {
   width: min(1000px, calc(100% - 40px));
@@ -94,9 +209,12 @@ main {
   font-size: 1.15rem;
 }
 
+/* Footer */
+
 footer {
   display: flex;
   justify-content: space-between;
+  gap: 30px;
 
   width: min(1100px, calc(100% - 40px));
   margin: 80px auto 0;
@@ -111,14 +229,18 @@ footer {
   gap: 20px;
 }
 
-@media (max-width: 700px) {
+/* Mobile */
+
+@media (max-width: 850px) {
   .top-nav {
     align-items: flex-start;
     flex-direction: column;
+    gap: 14px;
     padding: 18px 0;
   }
 
   .nav-links {
+    justify-content: flex-start;
     gap: 16px;
     flex-wrap: wrap;
   }
@@ -127,11 +249,29 @@ footer {
     padding: 5px 0;
   }
 
+  .theme-toggle {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
+
   .page-heading h1 {
     font-size: 2.3rem;
   }
 
   footer {
     flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .theme-toggle,
+  .theme-icon,
+  body {
+    transition: none;
   }
 }

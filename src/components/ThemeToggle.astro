@@ -1,0 +1,66 @@
+<button
+  class="theme-toggle"
+  type="button"
+  aria-label="Switch to dark mode"
+  title="Switch to dark mode"
+  aria-pressed="false"
+  data-theme-toggle
+>
+  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+  <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+</button>
+
+<script>
+  function updateButton(
+    button: HTMLButtonElement,
+    theme: string
+  ) {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+
+    button.setAttribute(
+      "aria-label",
+      `Switch to ${nextTheme} mode`
+    );
+
+    button.setAttribute(
+      "title",
+      `Switch to ${nextTheme} mode`
+    );
+
+    button.setAttribute(
+      "aria-pressed",
+      String(theme === "dark")
+    );
+  }
+
+  function initializeThemeToggle() {
+    const button =
+      document.querySelector<HTMLButtonElement>(
+        "[data-theme-toggle]"
+      );
+
+    if (!button) {
+      return;
+    }
+
+    const currentTheme =
+      document.documentElement.dataset.theme ?? "light";
+
+    updateButton(button, currentTheme);
+
+    button.addEventListener("click", () => {
+      const currentTheme =
+        document.documentElement.dataset.theme ?? "light";
+
+      const nextTheme =
+        currentTheme === "dark" ? "light" : "dark";
+
+      document.documentElement.dataset.theme = nextTheme;
+      localStorage.setItem("theme", nextTheme);
+
+      updateButton(button, nextTheme);
+    });
+  }
+
+  initializeThemeToggle();
+</script>

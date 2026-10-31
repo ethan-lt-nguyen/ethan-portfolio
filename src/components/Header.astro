@@ -1,50 +1,69 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro";
+
 const currentPage = Astro.url.pathname;
 ---
 
-<header>
-  <nav class="top-nav">
-    <a class="name" href="/">Ethan Nguyen</a>
+<header class="site-header">
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a class="name" href="/">
+      Ethan Nguyen
+    </a>
 
     <div class="nav-links">
-      <a class:list={{ active: currentPage === "/" }} href="/">
+      <a
+        class:list={{ active: currentPage === "/" }}
+        href="/"
+      >
         Home
       </a>
 
       <a
-        class:list={{ active: currentPage.startsWith("/research") }}
+        class:list={{
+          active: currentPage.startsWith("/research"),
+        }}
         href="/research/"
       >
         Research
       </a>
 
       <a
-        class:list={{ active: currentPage.startsWith("/projects") }}
+        class:list={{
+          active: currentPage.startsWith("/projects"),
+        }}
         href="/projects/"
       >
         Projects
       </a>
-      
+
       <a
-        class:list={{ active: currentPage.startsWith("/tutoring") }}
+        class:list={{
+          active: currentPage.startsWith("/tutoring"),
+        }}
         href="/tutoring/"
       >
         Tutoring
       </a>
-      
+
       <a
-        class:list={{ active: currentPage.startsWith("/coursework") }}
+        class:list={{
+          active: currentPage.startsWith("/coursework"),
+        }}
         href="/coursework/"
       >
         Coursework
       </a>
 
       <a
-        class:list={{ active: currentPage.startsWith("/about") }}
+        class:list={{
+          active: currentPage.startsWith("/about"),
+        }}
         href="/about/"
       >
         About
       </a>
+
+      <ThemeToggle />
     </div>
   </nav>
 </header>

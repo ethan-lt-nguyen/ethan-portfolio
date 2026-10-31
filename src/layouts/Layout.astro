@@ -17,9 +17,31 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
 
-    <meta name="description" content={description} />
+    <script is:inline>
+      (() => {
+        const savedTheme = localStorage.getItem("theme");
+
+        const preferredTheme = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches
+          ? "dark"
+          : "light";
+
+        document.documentElement.dataset.theme =
+          savedTheme ?? preferredTheme;
+      })();
+    </script>
+
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+
+    <meta
+      name="description"
+      content={description}
+    />
 
     <title>{title}</title>
   </head>
@@ -32,11 +54,19 @@ const {
     </main>
 
     <footer>
-      <p>© {new Date().getFullYear()} Ethan Nguyen. Built with Astro and a lot of CSS help from ChatGPT.</p>
+      <p>
+        © {new Date().getFullYear()} Ethan Nguyen. Built with Astro
+        and a lot of CSS help from ChatGPT.
+      </p>
 
       <div class="footer-links">
-        <a href="https://github.com/ethan-lt-nguyen">GitHub</a>
-        <a href="https://www.linkedin.com/in/ethan-lt-nguyen/">LinkedIn</a>
+        <a href="https://github.com/ethan-lt-nguyen">
+          GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/ethan-lt-nguyen/">
+          LinkedIn
+        </a>
       </div>
     </footer>
   </body>
